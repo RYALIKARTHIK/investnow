@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest in Middle Class</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: url('https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?cs=srgb&dl=pexels-pixabay-261102.jpg&fm=jpg') 
+                        no-repeat center center/cover;
+            color: white;
+            font-family: 'Georgia', serif;
+            position: relative;
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid gold;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: gold; 
+            text-shadow: 3px 3px 10px black;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            border: 5px solid gold;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .invest-btn {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background: gold;
+            border: 3px solid white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .invest-btn:hover {
+            background: darkgoldenrod;
+            border-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Profile Picture -->
+    <img class="profile-pic" src="https://i.ibb.co/pvTf0gDS/Whats-App-Image-2025-02-13-at-20-31-18-12465f90.jpg" alt="Profile Picture">
+
+    <h1>Welcome Everyone <br> Invest in Middle Class</h1>
+    
+    <!-- Invest Button -->
+    <a id="payBtn" class="invest-btn" href="#">Invest 1 Rupee</a> 
+
+    <script>
+        document.getElementById("payBtn").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevents default link behavior
+
+            let upiId = "yourupi@upi";  // Change this to your UPI ID
+            let amount = "1.00";
+            let name = "Middle Class Fund";
+
+            let upiUrl = `upi://pay?pa=${upiId}&pn=${name}&mc=&tid=&tr=&tn=Invest%201%20Rupee&am=${amount}&cu=INR`;
+
+            // Open in a new tab for better compatibility
+            window.location.href = upiUrl;
+        });
+    </script>
+
+</body>
+</html>
